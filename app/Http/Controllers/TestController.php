@@ -12,13 +12,13 @@ use GuzzleHttp\Client;
 class TestController extends Controller
 {
   public function index(){
-        // $res=$this->checkSignature();
-        // if ($res) {
-        //     echo $_GET['echostr'];
-        // }
-        $res=$this->text();
-          //创建菜单
-        $res1=$this->create_moun();
+        $res=$this->checkSignature();
+        if ($res) {
+            echo $_GET['echostr'];
+        }
+        // $res=$this->text();
+        //   //创建菜单
+        // $res1=$this->create_moun();
         // echo $res1;
     } 
       //自动回复
@@ -317,7 +317,7 @@ class TestController extends Controller
     $timestamp = $_GET["timestamp"];
     $nonce = $_GET["nonce"];
     
-    $token = 'pwd';
+    $token = 'cxf481617494';
     $tmpArr = array($token, $timestamp, $nonce);
     sort($tmpArr, SORT_STRING);
     $tmpStr = implode( $tmpArr );
