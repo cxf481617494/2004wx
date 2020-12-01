@@ -17,6 +17,7 @@ use App\MenueUser;
 class TestController extends Controller
 {
 	public function index(){
+    echo "123";
        $res = $this->checkSignature();
        if($res){
           echo  $_GET["echostr"];
