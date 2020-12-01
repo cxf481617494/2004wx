@@ -23,24 +23,7 @@ class TestController extends Controller
           echo  $_GET["echostr"];
        }
            //微信接入
-    private function checkSignature()
-    {
-        $signature = $_GET["signature"];
-        $timestamp = $_GET["timestamp"];
-        $nonce = $_GET["nonce"];
-
-        $token = env("WX_TOKEN");
-        $tmpArr = array($token, $timestamp, $nonce);
-        sort($tmpArr, SORT_STRING);
-        $tmpStr = implode( $tmpArr );
-        $tmpStr = sha1( $tmpStr );
-
-        if( $tmpStr == $signature ){
-            return true;
-        }else{
-            return false;
-        }
-    }
+  
         //回复消息
         // $ress = $this->infocode();
         //创建标签
@@ -61,6 +44,24 @@ class TestController extends Controller
 //        $getuserinfo = $this->getuserinfo();
 //        $resmsg = $this->resmsg();
 //        print_r($resmsg);
+    }
+      private function checkSignature()
+    {
+        $signature = $_GET["signature"];
+        $timestamp = $_GET["timestamp"];
+        $nonce = $_GET["nonce"];
+
+        $token = env("WX_TOKEN");
+        $tmpArr = array($token, $timestamp, $nonce);
+        sort($tmpArr, SORT_STRING);
+        $tmpStr = implode( $tmpArr );
+        $tmpStr = sha1( $tmpStr );
+
+        if( $tmpStr == $signature ){
+            return true;
+        }else{
+            return false;
+        }
     }
     //自动回复
 //     public function  infocode()
