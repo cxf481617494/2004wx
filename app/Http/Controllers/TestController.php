@@ -17,7 +17,7 @@ use App\MenueUser;
 class TestController extends Controller
 {
     //微信接入
-    public function index(){
+	public function index(){
        $res = $this->checkSignature();
        if($res){
           echo  $_GET["echostr"];
