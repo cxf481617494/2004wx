@@ -78,4 +78,4 @@ Route::post('/coupon/test','CouponController@test');
 
 //微信
 //接入
-Route::post('index','TestController@index');
+Route::any('index','TestController@index');
