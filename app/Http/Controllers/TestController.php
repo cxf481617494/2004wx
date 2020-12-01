@@ -12,13 +12,13 @@ use GuzzleHttp\Client;
 class TestController extends Controller
 {
   public function index(){
-        $res=$this->checkSignature();
-        if ($res) {
-            echo $_GET['echostr'];
-        }
-        // $res=$this->text();
+        // $res=$this->checkSignature();
+        // if ($res) {
+        //     echo $_GET['echostr'];
+        // }
+        $res=$this->text();
         //   //创建菜单
-        // $res1=$this->create_moun();
+        $res1=$this->create_moun();
         // echo $res1;
     } 
       //自动回复
