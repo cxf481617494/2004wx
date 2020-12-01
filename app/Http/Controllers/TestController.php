@@ -18,6 +18,7 @@ class TestController extends Controller
 {
     //微信接入
     public function index(){
+        // echo "132";
        $res = $this->checkSignature();
        if($res){
           echo  $_GET["echostr"];
